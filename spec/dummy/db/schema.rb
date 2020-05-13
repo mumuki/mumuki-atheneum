@@ -176,6 +176,7 @@ ActiveRecord::Schema.define(version: 20200312181842) do
     t.text "choices"
     t.text "settings"
     t.text "custom_expectations"
+    t.integer "purpose", default: 0
     t.index ["guide_id"], name: "index_exercises_on_guide_id"
     t.index ["language_id"], name: "index_exercises_on_language_id"
   end

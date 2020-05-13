@@ -10,7 +10,11 @@ module WithStudentPathNavigation
   end
 
   def next_exercise_button(exercise)
-    next_button(exercise) || next_button(exercise.guide.lesson)
+    adaptive_navigation_button(exercise) || next_button(exercise.guide.lesson)
+  end
+
+  def adaptive_navigation_button(exercise)
+    AdaptiveNavigation.new(self).button(exercise)
   end
 
   def close_modal_button

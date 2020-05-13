@@ -15,9 +15,10 @@ module Mumuki::Laboratory::Controllers::ResultsRendering
       render_results = 'exercise_solutions/results'
     end
 
-    render json: results.merge(progress_json).merge(
+    render json: results.merge(
         html: render_results_html(render_results, assignment),
-        remaining_attempts_html: remaining_attempts_text(assignment))
+        remaining_attempts_html: remaining_attempts_text(assignment)
+    ).merge(progress_json)
   end
 
   def merge_kids_specific_renders(assignment, results)
