@@ -1,4 +1,7 @@
 class UserMailer < ApplicationMailer
+  def welcome_email(user, organization)
+    build_email user, :welcome, 'welcome', organization
+  end
 
   def we_miss_you_reminder(user, cycles)
     build_email user, :we_miss_you, "#{cycles.ordinalize}_reminder"
