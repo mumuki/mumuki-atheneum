@@ -265,6 +265,7 @@ pt:
   username: Nome de usuário
   view_details: Ver detalhes
   want_permissions: O próximo usuário requer permissões
+  welcome: Convidamos você a sua nova organização!
   working: Processamento
   wrong_answer: A resposta não é correta
   you_must_sign_in_before_submitting: Você deve fazer o login antes de começar a enviar suas soluções

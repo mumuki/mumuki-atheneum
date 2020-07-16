@@ -284,6 +284,7 @@ es:
   view_details: Ver detalles
   want_permissions: El siguiente usuario requiere permisos
   we_miss_you: ¡Te extrañamos!
+  welcome: Te damos la bienvenida a tu nueva organización!
   will_paginate:
     previous_label: "&#8592; Anterior"
     next_label: "Siguiente &#8594;"
