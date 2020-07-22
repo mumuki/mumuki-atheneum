@@ -148,21 +148,21 @@ RSpec.describe UserMailer, type: :mailer do
 
       context "registered 1 week ago" do
         it { expect(user.should_remind?).to be true }
-        it { expect(reminder.body.encoded).to include("you've never submitted solutions") }
+        it { expect(reminder.body.encoded).to include('you&#39;ve never submitted solutions') }
       end
 
       context "last submission 2 weeks ago" do
         let(:days_since_user_creation) { 16 }
 
         it { expect(user.should_remind?).to be true }
-        it { expect(reminder.body.encoded).to include("you've never submitted solutions") }
+        it { expect(reminder.body.encoded).to include('you&#39;ve never submitted solutions') }
       end
 
       context "last submission 3 weeks ago" do
         let(:days_since_user_creation) { 26 }
 
         it { expect(user.should_remind?).to be true }
-        it { expect(reminder.body.encoded).to include("you've never submitted solutions") }
+        it { expect(reminder.body.encoded).to include('you&#39;ve never submitted solutions') }
       end
 
       context "last submission 4 weeks ago" do
