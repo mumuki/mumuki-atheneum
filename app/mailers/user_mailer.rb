@@ -1,6 +1,7 @@
 class UserMailer < ApplicationMailer
   def welcome_email(user, organization)
-    build_email user, :welcome, 'welcome', organization
+    template = organization.welcome_email_template.try { |it| { inline: it } } || 'welcome'
+    build_email user, :welcome, template, organization
   end
 
   def we_miss_you_reminder(user, cycles)
@@ -13,7 +14,7 @@ class UserMailer < ApplicationMailer
 
   private
 
-  def build_email(user, subject, template_name, organization = nil)
+  def build_email(user, subject, template, organization = nil)
     @user = user
     @unsubscribe_code = User.unsubscription_verifier.generate(user.id)
     @organization = organization || user.last_organization
@@ -21,7 +22,8 @@ class UserMailer < ApplicationMailer
     I18n.with_locale(@organization.locale) do
       mail to: user.email,
            subject: t(subject),
-           template_name: template_name
+           content_type: 'text/html',
+           body: render(template)
     end
   end
 end
