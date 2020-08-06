@@ -18,6 +18,7 @@ module Mumuki::Laboratory::Controllers::DynamicErrors
     rescue_from ActiveRecord::RecordInvalid, with: :bad_record
     rescue_from Mumuki::Domain::UnpreparedOrganizationError, with: :unprepared_organization
     rescue_from Mumuki::Domain::DisabledOrganizationError, with: :disabled_organization
+    rescue_from Mumuki::Domain::MustVerifyEmailError, with: :must_verify_email
   end
 
   def bad_record(exception)
@@ -62,6 +63,10 @@ module Mumuki::Laboratory::Controllers::DynamicErrors
 
   def disabled_organization
     render_error 'gone', 410, locals: { explanation: :disabled_organization_explanation }
+  end
+
+  def must_verify_email
+    render_error 'must_verify_email', 403, locals: { explanation: :must_verify_email }
   end
 
   def render_error(template, status, options={})

@@ -70,6 +70,8 @@ pt:
   edit: Editar
   editor_placeholder: ... Escreva sua solução aqui ...
   email: E-mail
+  email_verified_successfully: Seu e-mail foi verificado
+  email_verification_sent: Enviamos um pedido de verificação para o seu e-mail
   error_description: Opa! <br> Isto é o que é conhecido como <span class = "error-link"> %{error} </ span>.
   error_401: erro 401
   error_403: erro 403
@@ -146,6 +148,7 @@ pt:
   moderator: Mentor
   mumuki_catchphrase: Aprendi a programar
   mumuki_short_description: Mumuki é a plataforma gratuita e gratuita para aprender a programar, desde a prática até a teoria e no seu idioma
+  must_verify_email: Você deve verificar seu e-mail para continuar navegando nesta organização
   my_doubts: Minhas duvidas
   name: Nome
   navigation_continue: "Próximo %{kind}: %{sibling}"
@@ -171,6 +174,7 @@ pt:
   not_in_any_organizations: Parece que você ainda não está em nenhuma organização!
   notify_problem_with_exercise: Relatar um erro
   office: Secretariado
+  only_landscape_support: Por favor, gire seu tablet ou celular para realizar exercícios
   opened: Aberto
   opened_count: '%{count} aberto'
   organizations: Organizações
@@ -240,6 +244,7 @@ pt:
   submissions_for: Soluções para %{exercise}
   subscribe: se inscrever
   tag: Etiquetas
+  task: Tarefa
   teacher_info: Informação para professores
   tell_us_how: Conte-nos como isso aconteceu com você!
   tell_us_if_our_error: Se você acha que é nosso erro, %{issues}
@@ -263,11 +268,10 @@ pt:
   user: Usuário
   user_data_updated: Os seus dados foram atualizados corretamente
   username: Nome de usuário
+  verify_your_email: Verifique seu e-mail
   view_details: Ver detalhes
   want_permissions: O próximo usuário requer permissões
   welcome: Convidamos você a sua nova organização!
   working: Processamento
   wrong_answer: A resposta não é correta
   you_must_sign_in_before_submitting: Você deve fazer o login antes de começar a enviar suas soluções
-  task: Tarefa
-  only_landscape_support: Por favor, gire seu tablet ou celular para realizar exercícios

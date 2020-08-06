@@ -67,6 +67,8 @@ en:
   edit: Edit
   editor_placeholder: "write your solution here..."
   email: Email
+  email_verified_successfully: Your email has been verified
+  email_verification_sent: We've sent a verification request to your email
   error_description: This is known as a <span class="error-link">%{error}</span>.
   error_401: 401 error
   error_403: 403 error
@@ -93,7 +95,9 @@ en:
   first_name: First Name
   forbidden_explanation: You are not allowed to see this content.
   format: Format
+  fullscreen: "Fullscreen"
   gender: Gender
+  get_messages: "View messages"
   go_to: 'Go to %{organization}'
   gone_explanation: This content is no longer available.
   guide: Guide
@@ -138,6 +142,7 @@ en:
   moderator: Mentor
   mumuki_catchphrase: Improve your programming skills
   mumuki_short_description: Mumuki is a simple, open and collaborative platform for sharing and solving programming exercises. It is aimed to help people with learning and teaching programing languages and paradigms
+  must_verify_email: You must verify your e-mail in order to keep browsing this organization
   my_doubts: My doubts
   my_submissions: My Submissions
   name: Name
@@ -162,6 +167,7 @@ en:
   not_in_any_organizations: It seems you aren't in any organizations yet!
   notify_problem_with_exercise: Report a bug
   office: Office
+  only_landscape_support: Please, rotate your tablet or cellphone to continue practicing
   opened: Open
   opened_count: '%{count} opened'
   other: Other
@@ -230,6 +236,7 @@ en:
   submissions_for: Submissions for %{exercise}
   subscribe: Subscribe
   tag: Tags
+  task: Task
   teacher_info: Information for teachers
   tell_us_how: Please tell us how this happened!
   tell_us_if_our_error: If you think this is our fault, %{issues}
@@ -257,6 +264,7 @@ en:
   user: User
   user_data_updated: Your data was updated successfuly
   username: Username
+  verify_your_email: Verify your email
   view_details: View details
   want_permissions: The next user requires permissions
   we_miss_you: We miss you!
@@ -265,7 +273,3 @@ en:
   wrong_answer: The answer is wrong
   you_must_sign_in_before_submitting: You must sign in before submitting your solutions
   you_never_submitted_solutions: It seems that you've never submitted solutions since you created your account.
-  fullscreen: "Fullscreen"
-  get_messages: "View messages"
-  task: Task
-  only_landscape_support: Please, rotate your tablet or cellphone to continue practicing

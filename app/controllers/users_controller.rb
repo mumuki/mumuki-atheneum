@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   before_action :authenticate!
   before_action :set_user!
+  skip_before_action :verify_email!
 
   def show
     @messages = current_user.messages.to_a
@@ -15,10 +16,21 @@ class UsersController < ApplicationController
   end
 
   def unsubscribe
-    user_id = User.unsubscription_verifier.verify(params[:id])
-    User.find(user_id).unsubscribe_from_reminders!
+    User.for_unsubscribe_verifier(params[:id]).unsubscribe_from_reminders!
 
     redirect_to root_path, notice: t(:unsubscribed_successfully)
+  end
+
+  def verify_email
+    User.for_verify_email_verifier(params[:id]).verify_email!
+
+    redirect_to root_path, notice: t(:email_verified_successfully)
+  end
+
+  def request_email_verification
+    UserMailer.verification_email(@user).deliver_later
+
+    redirect_to user_path, notice: t(:email_verification_sent)
   end
 
   private

@@ -28,8 +28,10 @@ module OrganizationsControllerTemplate
               :name,
               *Mumuki::Domain::Organization::Profile.attributes,
               *Mumuki::Domain::Organization::Theme.attributes,
-              *(Mumuki::Domain::Organization::Settings.attributes - [:login_methods]),
-              login_methods: [])
+              *(Mumuki::Domain::Organization::Settings.attributes - %i(login_methods email_verification_policy)),
+              login_methods: [],
+              email_verification_policy: [:type, options: [:grace_period]]
+              )
       .tap { |it| it.merge!(book: Book.find_by!(slug: it[:book])) if it[:book] }
   end
 end

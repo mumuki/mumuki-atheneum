@@ -27,6 +27,8 @@ class ApplicationController < ActionController::Base
 
   before_action :visit_organization!, if: :current_user?
 
+  before_action :verify_email!, if: :current_user?
+
   after_action :leave_organization!
 
   helper_method :current_workspace,
@@ -81,6 +83,14 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def verify_email!
+    begin
+      Organization.current.email_verification_policy.verify!(current_user)
+    rescue Mumuki::Domain::GracePeriodStartError
+      #TODO: show modal
+    end
+  end
 
   def from_sessions?
     params['controller'] == 'login'

@@ -69,6 +69,12 @@ Rails.application.routes.draw do
 
     # Notification subscriptions
     get '/user/unsubscribe' => 'users#unsubscribe'
+
+    # Email verifications
+    get '/user/verify_email' => 'users#verify_email'
+    post '/user/request_email_verification' => 'users#request_email_verification'
+
+    # Profile updates\
     put '/user' => 'users#update', as: :update_user
 
     # Route for reading messages

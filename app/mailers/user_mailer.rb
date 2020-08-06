@@ -1,4 +1,8 @@
 class UserMailer < ApplicationMailer
+  def verification_email(user)
+    build_email user, :verify_your_email, 'email_verification'
+  end
+
   def welcome_email(user, organization)
     build_email user, :welcome, { inline: organization.welcome_email_template }, organization
   end
@@ -15,7 +19,7 @@ class UserMailer < ApplicationMailer
 
   def build_email(user, subject, template, organization = nil)
     @user = user
-    @unsubscribe_code = User.unsubscription_verifier.generate(user.id)
+    @unsubscribe_code = user.encoded_id_for_unsubscribe
     @organization = organization || user.last_organization
 
     I18n.with_locale(@organization.locale) do

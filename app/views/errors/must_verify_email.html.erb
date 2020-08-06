@@ -1,0 +1,15 @@
+<%= render layout: 'layouts/error' do %>
+    <div class="header">
+      <img class="error-code-img" src="/error/403.svg">
+    </div>
+    <div class="body">
+      <p>
+        <%= Organization.current.explain_error(403, explanation).html_safe %>
+      </p>
+      <%= form_for :user, method: :post, url: {controller: :users, action: 'request_email_verification'} do |f| %>
+        <button type="submit" class="btn btn-success pull-right"><%= t :verify_your_email %></button>
+      <% end %>
+    </div>
+<% end %>
+
+

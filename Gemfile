@@ -37,3 +37,4 @@ group :development, :test do
 end
 
 gem 'mumuki-domain', github: 'mumuki/mumuki-domain', branch: 'feature-send-welcome-email-to-users'
+gem 'mumukit-login', github: 'mumuki/mumukit-login', branch: 'accept_verified_email_info_from_providers'
