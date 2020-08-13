@@ -1,7 +1,6 @@
 class UserMailer < ApplicationMailer
   def welcome_email(user, organization)
-    template = organization.welcome_email_template.try { |it| { inline: it } } || 'welcome'
-    build_email user, :welcome, template, organization
+    build_email user, :welcome, { inline: organization.welcome_email_template }, organization
   end
 
   def we_miss_you_reminder(user, cycles)

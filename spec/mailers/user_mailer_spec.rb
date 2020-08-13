@@ -186,14 +186,7 @@ RSpec.describe UserMailer, type: :mailer do
     let(:custom_welcome_orga) { create :organization, welcome_email_template: 'hello <%= @user.first_name %>!' }
 
     let(:user) { create :user, first_name: 'some name' }
-
-    context 'when organization does not have a custom welcome template' do
-      let(:organization) { non_custom_welcome_orga }
-
-      it { expect(email.body.encoded).to_not include 'welcome some name!' }
-      it { expect(email.body.encoded).to include 'Mumuki' }
-    end
-
+    
     context 'when organization does have a custom welcome template' do
       let(:organization) { custom_welcome_orga }
 
