@@ -9,6 +9,8 @@ gem 'execjs'
 gem 'therubyracer', platforms: :ruby
 gem 'uglifier', '~> 2.7'
 
+gem 'mumuki-domain', github: 'mumuki/mumuki-domain', branch: 'feature-add-game-mode'
+
 group :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_bot_rails', '~> 5.0'

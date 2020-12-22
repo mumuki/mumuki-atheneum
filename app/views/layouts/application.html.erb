@@ -1,5 +1,5 @@
 <%= content_for :navbar do %>
-  <%= hidden_field_tag("mu-current-exp", UserStats.exp_for(@current_user)) if in_gamified_context? %>
+  <%= hidden_field_tag("mu-current-exp", UserStats.exp_for(@current_user)) if in_gamified_context? @current_user %>
   <div class="<%= exercise_container_type %>">
     <nav class="mu-navbar">
       <div class="mu-navbar-breadcrumb hidden-xs">
@@ -19,7 +19,7 @@
       </div>
       <div class="mu-navbar-avatar">
         <% if current_logged_user? %>
-          <% if in_gamified_context? %>
+          <% if in_gamified_context? @current_user %>
             <div class="mu-navbar-element">
               <i class="fa fa-star fa-fw fa-2x mu-navbar-icon mu-level-tooltip" data-toggle="tooltip" data-placement="bottom" level="<%= t(:level) %>"></i>
               <span class="mu-level-number"></span>

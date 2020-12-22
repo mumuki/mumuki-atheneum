@@ -1,6 +1,6 @@
 <h4 class="text-<%= icon_class_for(contextualization.submission_status) %>">
   <strong><%= fa_icon icon_type_for(contextualization.submission_status) %> <%= t_contextualization_status contextualization %></strong>
-  <% if in_gamified_context? %>
+  <% if in_gamified_context? @current_user %>
     <strong><small class="text-success">
       <span class="mu-experience"></span>
     </small></strong>

@@ -61,7 +61,7 @@
     <%= render partial: 'layouts/exercise_skipped' %>
   <% end %>
 
-  <% if in_gamified_context? %>
+  <% if in_gamified_context? @current_user %>
     <%= render partial: 'layouts/modals/level_up' %>
   <% end %>
 

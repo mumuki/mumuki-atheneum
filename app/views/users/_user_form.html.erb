@@ -7,7 +7,7 @@
 <div class="row mu-tab-body">
   <div class="col-md-4 mu-profile-info-left">
     <%= profile_picture_for(@user, id: 'mu-user-avatar', class: 'mu-user-avatar') %>
-    <% if in_gamified_context? %>
+    <% if in_gamified_context? @user %>
       <svg class="mu-level-progress" width="300" height="300" viewBox="0 0 100 100">
         <path id="mu-level-progress" stroke-linecap="round" stroke="#24b8aa" stroke-width="4" stroke-dasharray="0, 999" fill="none" d="M50 10 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
       </svg>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201130163114) do
+ActiveRecord::Schema.define(version: 20201217154538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -397,6 +397,7 @@ ActiveRecord::Schema.define(version: 20201130163114) do
     t.integer "exp", default: 0
     t.bigint "user_id"
     t.bigint "organization_id"
+    t.boolean "game_mode_enabled"
     t.index ["organization_id"], name: "index_user_stats_on_organization_id"
     t.index ["user_id"], name: "index_user_stats_on_user_id"
   end
