@@ -236,6 +236,7 @@ es:
   responses_count_asc: Con menos respuestas validadas
   responses_count_desc: Con más respuestas validadas
   restart: Reiniciar
+  restore_message: Restaurar el mensaje
   results_hidden: ¡Tu solución fue enviada con éxito!
   results: Resultados
   retry_exercise: Reintentar

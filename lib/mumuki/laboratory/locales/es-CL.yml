@@ -216,6 +216,7 @@ es-CL:
   refresh_or_wait: Si no se muestra automáticamente en unos segundos, presiona F5
   reset_query: Borrar los filtros de búsqueda actuales
   restart: Reiniciar
+  restore_message: Restaurar el mensaje
   results_hidden: ¡Tu solución fue enviada con éxito!
   results: Resultados
   retry_exercise: Reintentar

@@ -225,6 +225,7 @@ pt:
   requires_attention: Requer atenção
   reset_query: Limpar filtros de pesquisa atuais
   restart: Reiniciar
+  restore_message: Restaurar a mensagem
   results: Resultados
   results_hidden: Sua solução foi enviada com sucesso!
   retry_exercise: Tentar novamente

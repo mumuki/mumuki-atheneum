@@ -218,6 +218,7 @@ en:
   responses_count_asc: By less validated replies
   responses_count_desc: By more validated replies
   restart: Restart
+  restore_message: Restore message
   results: Results
   results_hidden: Your solution was submitted successfully!
   retry_exercise: Retry

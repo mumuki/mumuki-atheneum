@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resources :messages, only: [:create, :destroy], controller: 'discussions_messages' do
         post :approve, on: :member
         post :question, on: :member
+        post :restore, on: :member
       end
     end
 

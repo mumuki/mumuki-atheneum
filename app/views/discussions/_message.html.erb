@@ -21,7 +21,11 @@
                 </a>
               <% end %>
             <% end %>
-            <%= link_to fa_icon('trash-o'), discussion_message_path(@discussion, message), method: :delete, data: { confirm: t(:are_you_sure, action: t(:destroy_message)) } %>
+            <% if message.enabled? %>
+              <%= link_to fa_icon('trash-o'), discussion_message_path(@discussion, message), method: :delete, data: { confirm: t(:are_you_sure, action: t(:destroy_message)) } %>
+            <% elsif current_user.admin_here? %>
+              <%= link_to fa_icon('refresh'), restore_discussion_message_url(@discussion, message), method: :post, data: { confirm: t(:are_you_sure, action: t(:restore_message)) } %>
+            <% end %>
           <% end %>
           <% if should_show_approved_for?(current_user, message) %>
             <span class="discussion-message-approved selected">
