@@ -5,10 +5,10 @@ describe AvatarHelper, organization_workspace: :test do
 
   let(:user) { create(:user, avatar: kids_avatars.last) }
 
-  let(:kids_avatars) { create_list(:avatar, 4, target_audience: :kids) }
+  let(:kids_avatars) { create_list(:avatar, 4, target_audience: :primary) }
   let!(:grown_ups_avatars) { create_list(:avatar, 3, target_audience: :grown_ups) }
 
-  let!(:kids_organization) { create(:organization, target_audience: :kids) }
+  let!(:kids_organization) { create(:organization, target_audience: :primary) }
   let!(:grown_ups_organization) { create(:organization, target_audience: :grown_ups, name: 'for_grown_ups') }
 
   describe 'avatars_for' do

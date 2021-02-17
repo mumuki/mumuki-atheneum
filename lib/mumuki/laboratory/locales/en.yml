@@ -213,6 +213,7 @@ en:
   permissions: Permissions
   please_fill_profile_data: Please complete your profile data to continue!
   please_validate: 'Please validate your data before continue:'
+  preferences: Preferences
   previous_exercise: Previous
   problem_with_exercise: '[Mumuki] Problem with exercise: %{title}'
   processing_your_solution: We are processing you solution
@@ -235,6 +236,8 @@ en:
   see_context: Watch exercise introduction animation
   sending_solution: Sending solution
   show: Show
+  show_texts_as_uppercase: Show text in uppercase
+  show_texts_as_uppercase_detail: Converts most texts to uppercase to simplify reading.
   sign_in: Sign in
   sign_in_action: sign in
   sign_out: Sign Out
@@ -296,6 +299,7 @@ en:
   upvotes_count_asc: Least voted
   user: User
   user_data_updated: Your data was updated successfuly
+  user_preferences_updated: Your preferences were updated successfully
   username: Username
   view_details: View details
   want_permissions: The next user requires permissions

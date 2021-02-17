@@ -1,0 +1,27 @@
+<%= content_for :breadcrumbs do %>
+  <%= breadcrumbs @user %>
+<% end %>
+
+<%= form_for :user, url: preferences_user_path, :html => { id: 'mu-user-form' }, method: :put do |f| %>
+  <div class="mu-user-header">
+    <h1><%= t(:preferences) %></h1>
+    <div class="mu-profile-actions hidden-xs">
+      <%= cancel_edit_profile_button %>
+      <%= save_edit_profile_button f %>
+    </div>
+  </div>
+  <div class="row mu-tab-body">
+    <div class="col-md-12">
+      <% unless uppercase_organization? Organization.current %>
+        <span class="field checkbox complementary complementary-checkbox">
+          <%= f.check_box :uppercase_mode?, class: 'form-control' %>
+          <%= label_tag :uppercase_mode, t(:show_texts_as_uppercase) %>
+          <p class="mu-preference-detail"><%= t(:show_texts_as_uppercase_detail) %></p>
+        </span>
+      <% end %>
+    </div>
+  </div>
+  <div class="mu-profile-actions mobile visible-xs">
+    <%= save_edit_profile_button f %>
+  </div>
+<% end %>

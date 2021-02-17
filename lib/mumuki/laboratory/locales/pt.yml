@@ -221,6 +221,7 @@ pt:
   permissions: Permissões
   please_fill_profile_data: Preencha suas informações pessoais para continuar!
   please_validate: Você está prestes a entrar no curso. Para oferecer uma experiência melhor, valide que seus dados abaixo sejam reais e corretos.
+  preferences: Preferências
   previous_exercise: Anterior
   problem_with_exercise: '[Mumuki] Erro com exercício %{title}'
   processing_your_solution: Estamos processando sua solução
@@ -243,6 +244,8 @@ pt:
   send: Enviar
   sending_solution: Solução de envio
   show: Mostrar
+  show_texts_as_uppercase: Mostrar texto em maiúsculas
+  show_texts_as_uppercase_detail: Converta a maioria dos textos em letras maiúsculas para simplificar a leitura.
   sign_in: Iniciar sessão
   sign_in_action: iniciar sessão
   sign_out: Fechar Sessão
@@ -300,6 +303,7 @@ pt:
   uploading_solution: Uploading solution
   user: Usuário
   user_data_updated: Os seus dados foram atualizados corretamente
+  user_preferences_updated: Os seus preferências foram atualizados corretamente
   username: Nome de usuário
   view_details: Ver detalhes
   want_permissions: O próximo usuário requer permissões

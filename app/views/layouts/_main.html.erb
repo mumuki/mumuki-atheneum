@@ -17,7 +17,7 @@
 
   <%= login_form.header_html %>
 </head>
-<body>
+<body class="<%= uppercase_enabled?(current_user, Organization.current) ? 'mu-uppercase' : '' %>">
 <% if should_choose_organization? %>
     <%= render partial: 'layouts/organization_chooser' %>
 <% end %>
