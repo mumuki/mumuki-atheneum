@@ -34,3 +34,5 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'binding_of_caller'
 end
+#
+gem 'mumuki-domain', path: '/home/federico/Projects/mumuki/mumuki-domain'
