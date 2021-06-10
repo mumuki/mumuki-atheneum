@@ -72,7 +72,7 @@ class ApplicationController < ActionController::Base
 
   def validate_active_organization!
     return if current_user&.teacher_here?
-    Organization.current.validate_active!
+    Organization.current.validate_active_for! current_user
   end
 
   # required by Mumukit::Login
