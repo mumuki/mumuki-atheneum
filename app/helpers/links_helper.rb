@@ -71,7 +71,7 @@ module LinksHelper
   end
 
   def faqs_enabled_here?
-    Organization.current.faqs.present?
+    Organization.current.access_mode(current_user).faqs_here?
   end
 
   private
