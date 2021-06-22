@@ -20,6 +20,9 @@
                 <%= profile_picture_for current_user %>
               </div>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                <% if profile_enabled_here? %>
+                  <%= menu_link_to_profile %>
+                <% end %>
                 <%= menu_bar_list_items %>
                 <% if any_menu_bar_links? %>
                   <li class="dropdown-divider"></li>

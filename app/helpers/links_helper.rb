@@ -71,10 +71,18 @@ module LinksHelper
   end
 
   def faqs_enabled_here?
-    Organization.current.access_mode(current_user).faqs_here?
+    current_access_mode.faqs_here?
+  end
+
+  def profile_enabled_here?
+    current_access_mode.profile_here?
   end
 
   private
+
+  def current_access_mode
+    Organization.current.access_mode(current_user)
+  end
 
   def extract_name(named, options)
     case options.delete(:mode)
