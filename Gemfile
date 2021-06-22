@@ -36,3 +36,5 @@ group :development, :test do
 end
 #
 gem 'mumuki-domain', path: '/home/federico/Projects/mumuki/mumuki-domain'
+#
+gem 'mumukit-auth', path: '/home/federico/Projects/mumuki/mumukit-auth'
