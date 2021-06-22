@@ -50,4 +50,8 @@ class ExercisesController < ApplicationController
              :guide_id, :number,
              :layout, :expectations_yaml)
   end
+
+  def authorization_minimum_role
+    :ex_student
+  end
 end

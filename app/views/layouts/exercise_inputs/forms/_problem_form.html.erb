@@ -38,7 +38,7 @@
       </div>
 
       <div class="actions mu-submit-button">
-        <%= render_submit_button(@assignment) %>
+        <%= render_submit_button(@assignment) if current_access_mode.tap_inspect('ACCESS_MODE').submit_solutions_here?%>
       </div>
     <% end %>
   </div>
