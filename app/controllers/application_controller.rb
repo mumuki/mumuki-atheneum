@@ -43,7 +43,8 @@ class ApplicationController < ActionController::Base
                 :current_immersive_organizations,
                 :theme_stylesheet_url,
                 :extension_javascript_url,
-                :current_immersive_path
+                :current_immersive_path,
+                :current_access_mode
 
   add_flash_types :info
 
@@ -159,5 +160,9 @@ class ApplicationController < ActionController::Base
 
   def leave_organization!
     Mumukit::Platform::Organization.leave!
+  end
+
+  def current_access_mode
+    Organization.current.access_mode(current_user)
   end
 end

@@ -80,10 +80,6 @@ module LinksHelper
 
   private
 
-  def current_access_mode
-    Organization.current.access_mode(current_user)
-  end
-
   def extract_name(named, options)
     case options.delete(:mode)
       when :plain
