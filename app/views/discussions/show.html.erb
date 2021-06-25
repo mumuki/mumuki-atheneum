@@ -4,7 +4,7 @@
 
 <div>
   <div class="discussion-context">
-    <%= render partial: 'exercises/read_only', locals: {exercise: @debatable} %>
+    <%= render partial: 'exercises/read_only', locals: { exercise: @debatable } %>
   </div>
 </div>
 
@@ -13,7 +13,7 @@
 
   <div class="d-flex flex-wrap">
     <h3 class="flex-grow-1 me-3"><%= t :messages %></h3>
-    <% if current_user && @discussion.persisted? %>
+    <% if current_user && @discussion.persisted? && current_access_mode.show_discussion_element? %>
       <span class="d-flex">
         <% if @discussion.can_toggle_responsible?(current_user) %>
           <div class="discussion-responsible me-1">
@@ -40,10 +40,10 @@
   <% if @discussion.has_messages? %>
     <div class="discussion-messages">
       <% if @discussion.description.present? %>
-        <%= render partial: 'discussions/description_message', locals: {discussion: @discussion} %>
+        <%= render partial: 'discussions/description_message', locals: { discussion: @discussion } %>
       <% end %>
       <% @discussion.visible_messages.each do |message| %>
-          <%= render partial: 'discussions/message', locals: {user: message.sender_user, message: message} %>
+        <%= render partial: 'discussions/message', locals: { user: message.sender_user, message: message } %>
       <% end %>
       <% if @discussion.commentable_by?(current_user) %>
         <hr class="message-divider">
@@ -51,7 +51,7 @@
     </div>
   <% end %>
 
-  <%= render partial: 'discussions/new_message', locals: {user: current_user} if @discussion.commentable_by?(current_user) %>
+  <%= render partial: 'discussions/new_message', locals: { user: current_user } if @discussion.commentable_by?(current_user) && current_access_mode.show_discussion_element? %>
 
 <% end %>
 
