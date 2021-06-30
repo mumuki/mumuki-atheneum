@@ -7,6 +7,10 @@ module ContentViewHelper
     content.name
   end
 
+  def show_content?(content)
+    Organization.current.access_mode(current_user).show_content?(content)
+  end
+
   private
 
   def content_type_number(content)

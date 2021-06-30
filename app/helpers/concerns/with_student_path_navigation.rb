@@ -9,7 +9,7 @@ module WithStudentPathNavigation
   end
 
   def next_exercise_button(exercise)
-    next_button(exercise) || next_button(exercise.guide.lesson)
+    next_button(exercise) || next_button(exercise.guide.lesson) unless show_content?(exercise)
   end
 
   def close_modal_button
