@@ -3,6 +3,7 @@ require 'addressable/uri'
 # It acts as a guide container in monolesson contexts
 class ChaptersController < GuideContainerController
   include Mumuki::Laboratory::Controllers::ImmersiveNavigation
+  include Mumuki::Laboratory::Controllers::ValidateAccessMode
 
   def subject
     @chapter ||= Chapter.find_by(id: params[:id])
@@ -17,5 +18,9 @@ class ChaptersController < GuideContainerController
 
   def authorization_minimum_role
     :ex_student
+  end
+
+  def subject_container
+    subject.topic
   end
 end

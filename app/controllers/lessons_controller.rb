@@ -1,5 +1,6 @@
 class LessonsController < GuideContainerController
   include Mumuki::Laboratory::Controllers::ImmersiveNavigation
+  include Mumuki::Laboratory::Controllers::ValidateAccessMode
 
   private
 
@@ -9,5 +10,9 @@ class LessonsController < GuideContainerController
 
   def authorization_minimum_role
     :ex_student
+  end
+
+  def subject_container
+    subject.guide
   end
 end
