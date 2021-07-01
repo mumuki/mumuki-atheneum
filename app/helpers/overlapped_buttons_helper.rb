@@ -16,7 +16,7 @@ module OverlappedButtonsHelper
       {class: 'mu-content-toolbar-item mu-restart-guide',
        data: {confirm: t(:confirm_restart)}, method: :delete, 'data-bs-placement': 'top'})
 
-    link_to overlapped_button_icon(:undo), guide_progress_path(guide), all_options unless show_content? guide
+    link_to overlapped_button_icon(:undo), guide_progress_path(guide), all_options if show_content_element?
 
   end
 

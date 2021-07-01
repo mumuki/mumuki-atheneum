@@ -3,8 +3,6 @@ module Mumuki::Laboratory::Controllers::ValidateAccessMode
 
   included do
     before_action :validate_accessible!, only: :show
-
-    implements :subject
   end
 
   def validate_accessible!

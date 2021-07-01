@@ -24,7 +24,6 @@ class ApplicationController < ActionController::Base
   before_action :redirect_to_proper_context!, if: :immersive_context_wrong?
 
   before_action :authorize_if_private!
-  before_action :validate_active_organization!
   before_action :validate_user_profile!, if: :current_user?
   before_action :validate_accepted_role_terms!, if: :current_user?
 

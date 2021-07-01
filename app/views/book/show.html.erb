@@ -7,14 +7,14 @@
 
   <% @book.next_lesson_for(current_user).try do |lesson| %>
     <% if show_content? lesson.guide %>
-      <br>
-    <% else %>
       <div class="actions">
-        <a href="<%=  lesson_path(lesson)  %>" class="btn btn-complementary">
-          <%=  t book_practice_key_for(current_user)  %>
+        <a href="<%=   lesson_path(lesson)   %>" class="btn btn-complementary">
+          <%=   t book_practice_key_for(current_user)   %>
         </a>
       </div>
-    <%  end %>
+    <%  else  %>
+      <br>
+    <%   end %>
   <% end %>
 
   <h2><%= t(:chapters) %></h2>
