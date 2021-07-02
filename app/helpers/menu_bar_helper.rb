@@ -5,7 +5,7 @@ module MenuBarHelper
       menu_link_to_bibliotheca,
       solve_discussions_link,
       user_discussions_link
-    ]
+    ].compact
   end
 
   def menu_bar_list_items
