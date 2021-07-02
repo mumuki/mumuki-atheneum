@@ -35,6 +35,6 @@ group :development, :test do
   gem 'binding_of_caller'
 end
 #
-gem 'mumuki-domain', path: '/home/federico/Projects/mumuki/mumuki-domain'
+gem 'mumuki-domain', github: 'mumuki/mumuki-domain', branch: 'feature-read-only-organization'
 #
-gem 'mumukit-auth', path: '/home/federico/Projects/mumuki/mumukit-auth'
+gem 'mumukit-auth', github: 'mumuki/mumukit-auth', branch: 'feature-ex-student-role'
