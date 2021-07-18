@@ -1,5 +1,5 @@
 <%= form_for [@discussion, Message.new] do |f| %>
-  <%= render layout: 'discussions/message_container', locals: {user: user} do %>
+  <%= render layout: 'discussions/message_container', locals: { user: user } do %>
     <div class="discussion-message-bubble">
       <div class="discussion-message-bubble-header">
         <div class="discussion-message-bubble-title">

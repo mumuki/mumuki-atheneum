@@ -24,7 +24,6 @@ class ApplicationController < ActionController::Base
   before_action :redirect_to_proper_context!, if: :immersive_context_wrong?
 
   before_action :authorize_if_private!
-  before_action :validate_active_organization!
   before_action :validate_user_profile!, if: :current_user?
   before_action :validate_accepted_role_terms!, if: :current_user?
 
@@ -43,7 +42,8 @@ class ApplicationController < ActionController::Base
                 :current_immersive_organizations,
                 :theme_stylesheet_url,
                 :extension_javascript_url,
-                :current_immersive_path
+                :current_immersive_path,
+                :current_access_mode
 
   add_flash_types :info
 
@@ -72,7 +72,7 @@ class ApplicationController < ActionController::Base
 
   def validate_active_organization!
     return if current_user&.teacher_here?
-    Organization.current.validate_active!
+    Organization.current.validate_active_for! current_user
   end
 
   # required by Mumukit::Login
@@ -159,5 +159,9 @@ class ApplicationController < ActionController::Base
 
   def leave_organization!
     Mumukit::Platform::Organization.leave!
+  end
+
+  def current_access_mode
+    Organization.current.access_mode(current_user)
   end
 end

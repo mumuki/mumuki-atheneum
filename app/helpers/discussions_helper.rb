@@ -8,7 +8,7 @@ module DiscussionsHelper
   end
 
   def solve_discussions_link
-    discussions_link others_discussions_icon(t(:solve_doubts)), discussions_path(solve_discussion_params_for(current_user)), class: 'dropdown-item'
+    discussions_link others_discussions_icon(t(:solve_doubts)), discussions_path(solve_discussion_params_for(current_user)), class: 'dropdown-item' if current_access_mode.resolve_discussions_here?
   end
 
   def user_discussions_link

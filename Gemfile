@@ -34,3 +34,7 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'binding_of_caller'
 end
+#
+gem 'mumuki-domain', github: 'mumuki/mumuki-domain', branch: 'feature-read-only-organization'
+#
+gem 'mumukit-auth', github: 'mumuki/mumukit-auth', branch: 'feature-ex-student-role'

@@ -28,7 +28,7 @@
   </div>
 <% end %>
 
-<% if !@stats.try(:done?) && @next_exercise %>
+<% if !@stats.try(:done?) && @next_exercise && show_content_element? %>
   <div class="text-box">
     <div class="actions">
       <%= link_to t(lesson_practice_key_for(@stats)), exercise_path(@next_exercise), class: 'btn btn-complementary' %>
@@ -36,7 +36,7 @@
   </div>
 <% end %>
 
-<% if @stats&.done? %>
+<% if @stats&.done? && show_content_element? %>
   <div class="text-box">
     <div class="actions">
       <%= next_lesson_button @guide %>

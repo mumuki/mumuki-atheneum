@@ -1,5 +1,6 @@
 <ul class="progress-listing">
   <% guide.assignments_for(current_user).each do |assignment| %>
+      <% next unless show_content?(assignment.exercise) %>
       <% cache [assignment.exercise, assignment.status, Organization.current.name, current_user?] do %>
           <li <%= turbolinks_enable_for(assignment.exercise) %>>
             <%= assignment_status_icon assignment %>

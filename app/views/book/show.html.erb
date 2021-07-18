@@ -6,16 +6,25 @@
   <%= render partial: 'book/header' %>
 
   <% @book.next_lesson_for(current_user).try do |lesson| %>
-    <div class="actions">
-      <a href="<%= lesson_path(lesson) %>" class="btn btn-complementary">
-        <%= t book_practice_key_for(current_user) %>
-      </a>
-    </div>
+    <% if show_content_element? %>
+      <div class="actions">
+        <a href="<%=   lesson_path(lesson)   %>" class="btn btn-complementary">
+          <%=   t book_practice_key_for(current_user)   %>
+        </a>
+      </div>
+    <%  else  %>
+      <br>
+    <%   end %>
   <% end %>
 
-  <h2><%= t(:chapters) %></h2>
+  <% if show_content?(@book) %>
+    <h2><%= t(:chapters) %></h2>
+  <% end %>
 
   <% @book.chapter_visibilities_in(current_workspace).each do |it, enabled| %>
+
+    <% next unless show_content?(it.topic) %>
+
     <div class="chapter-container">
       <div class="chapter <%= enabled ? '' : 'mu-locked' %>">
         <h3><%= it.number %>. <%= link_to_path_element it, mode: :plain %></h3>

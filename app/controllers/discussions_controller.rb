@@ -7,6 +7,7 @@ class DiscussionsController < ApplicationController
   before_action :discussion_filter_params, only: :index
   before_action :read_discussion, only: :show
   before_action :authorize_moderator!, only: [:responsible]
+  before_action :validate_access_mode!
 
   helper_method :discussion_filter_params
 
@@ -98,5 +99,13 @@ class DiscussionsController < ApplicationController
 
   def discussion_filter_params
     @filter_params ||= params.permit(Discussion.permitted_query_params)
+  end
+
+  def authorization_minimum_role
+    :ex_student
+  end
+
+  def validate_access_mode!
+    current_access_mode.validate_discuss_here? subject
   end
 end

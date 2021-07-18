@@ -13,7 +13,7 @@
     <% unless assignment.manual_evaluation_comment? %>
       <%= render layout: 'exercise_solutions/assistant_rules_box', locals: {assignment: assignment } do %>
         <%= render partial: 'exercise_solutions/contextualization_results_body', locals: {contextualization: assignment} %>
-        <% if should_render_need_help_dropdown?(assignment) %>
+        <% if should_render_need_help_dropdown?(assignment) && current_access_mode.show_discussion_element? %>
           <div class="notify-problem-box">
             <div class="dropdown">
               <%= link_to fa_icon(:'question-circle', text: t(:need_help)), "", {'data-bs-toggle': 'dropdown'} %>

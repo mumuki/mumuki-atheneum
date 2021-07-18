@@ -1,6 +1,7 @@
 <div class="progress-list-flex">
   <% assignments = guide.assignments_for(current_user) %>
   <% assignments.each do |assignment| %>
+    <% next unless show_content?(assignment.exercise) %>
     <% exercise = assignment.exercise %>
     <a
       <%= turbolinks_enable_for exercise %>

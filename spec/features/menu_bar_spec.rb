@@ -50,11 +50,11 @@ feature 'menu bar' do
     let(:admin) { create(:user, permissions: {student: 'private/*', admin: 'private/*'}) }
     let(:owner) { create(:user, permissions: {student: 'private/*', owner: 'private/*'}) }
 
-    scenario 'visitor should only see their account' do
+    scenario 'visitor should only see sing out' do
       set_current_user! visitor
 
       visit '/'
-      expect(page).to have_text('My account')
+      expect(page).not_to have_text('My account')
       expect(page).not_to have_text('Classroom')
       expect(page).not_to have_text('Bibliotheca')
       expect(page).not_to have_text('Solve other\'s doubts')
@@ -93,6 +93,7 @@ feature 'menu bar' do
       before { Organization.current.update! faqs: "Some faqs" }
 
       scenario 'should see FAQs link' do
+        set_current_user! student
         visit '/'
 
         expect(page).to have_text('FAQs')

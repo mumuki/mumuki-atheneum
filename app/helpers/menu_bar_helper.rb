@@ -1,12 +1,11 @@
 module MenuBarHelper
   def menu_bar_links
     [
-      menu_link_to_profile,
       menu_link_to_classroom,
       menu_link_to_bibliotheca,
       solve_discussions_link,
       user_discussions_link
-    ]
+    ].compact
   end
 
   def menu_bar_list_items
@@ -18,7 +17,7 @@ module MenuBarHelper
   end
 
   def menu_link_to_profile
-    menu_item('user', :my_account, user_path)
+    li_tag menu_item('user', :my_account, user_path)
   end
 
   def menu_link_to_classroom

@@ -4,7 +4,7 @@
   <%= render_exercise_input_editor f, exercise %>
 
   <div class="actions mu-submit-button mu-kids-submit-button">
-    <%= render_submit_button(@assignment) %>
+    <%= render_submit_button(@assignment) if current_access_mode.submit_solutions_here? %>
   </div>
   <div class="actions mu-kids-reset-button"></div>
   <img class="mu-kids-compass-rose" src="/compass_rose.svg">

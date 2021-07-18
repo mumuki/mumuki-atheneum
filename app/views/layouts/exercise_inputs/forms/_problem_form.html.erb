@@ -34,11 +34,15 @@
                  remote: true,
                  html: {role: 'form', class: "new_solution mu-editor mu-editor-overlap mu-form #{pending_messages_filter(@assignment)}"}) do |f| %>
       <div class="mb-3">
-        <%= render_exercise_input_editor f, exercise %>
+        <% if current_access_mode.submit_solutions_here? %>
+          <%= render_exercise_input_editor f, exercise %>
+        <% else %>
+          <%= render_exercise_read_only_editor exercise, @assignment.solution %>
+        <% end %>
       </div>
 
       <div class="actions mu-submit-button">
-        <%= render_submit_button(@assignment) %>
+        <%= render_submit_button(@assignment) if current_access_mode.submit_solutions_here? %>
       </div>
     <% end %>
   </div>

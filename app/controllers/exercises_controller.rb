@@ -2,6 +2,7 @@ class ExercisesController < ApplicationController
   include Mumuki::Laboratory::Controllers::Content
   include Mumuki::Laboratory::Controllers::ExerciseSeed
   include Mumuki::Laboratory::Controllers::ImmersiveNavigation
+  include Mumuki::Laboratory::Controllers::ValidateAccessMode
 
   before_action :set_guide!, only: :show
   before_action :set_assignment!, only: :show, if: :current_user?
@@ -49,5 +50,9 @@ class ExercisesController < ApplicationController
              :extra, :language_id, :hint, :tag_list,
              :guide_id, :number,
              :layout, :expectations_yaml)
+  end
+
+  def authorization_minimum_role
+    :ex_student
   end
 end
